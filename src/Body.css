@@ -78,6 +78,7 @@
   border: none;
   cursor: pointer;
   color: black;
+  width: 40%;
   font-family: 'read_more';
   letter-spacing: 3px;
 }
@@ -160,6 +161,7 @@
   .body__readMoreButton {
     font-size: 15px;
     padding: 10px 20px;
+    width: 100%;
   }
   .body__leftBottomContent {
     width: 100%;

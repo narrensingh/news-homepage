@@ -11,6 +11,10 @@ const Navbar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -19,7 +23,7 @@ const Navbar = () => {
         navbarRef.current &&
         !navbarRef.current.contains(event.target)
       ) {
-        setSidebarOpen(false);
+        closeSidebar();
       }
     };
 
@@ -42,10 +46,17 @@ const Navbar = () => {
 
       {sidebarOpen && (
         <div className="navbar__sidebar" ref={sidebarRef}>
-          <p>Home</p>
-          <p>Popular</p>
-          <p>Trending</p>
-          <p>Categories</p>
+          <div className="navbar__sidebarHeader">
+            <button className="navbar__sidebarClose" onClick={closeSidebar}>
+              &times;
+            </button>
+          </div>
+          <div className="navbar__sidebarLinks">
+            <p>Home</p>
+            <p>Popular</p>
+            <p>Trending</p>
+            <p>Categories</p>
+          </div>
         </div>
       )}
 
